@@ -759,7 +759,7 @@ function lib:Window(text, preset, closebind)
             SlideCircle.BackgroundTransparency = 1.000
             SlideCircle.Position = UDim2.new((start or 0) / max, -6, -1.30499995, 0)
             SlideCircle.Size = UDim2.new(0, 11, 0, 11)
-            SlideCircle.Image = "rbxassetid://3570695787"
+            SlideCircle.Image = "rbxassetid://17764869956"
             SlideCircle.ImageColor3 = PresetColor
 
             coroutine.wrap(
