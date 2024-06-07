@@ -1168,7 +1168,7 @@ function lib:Window(text, preset, closebind)
             Color.Position = UDim2.new(0, 0, 0, 42)
             Color.Size = UDim2.new(0, 194, 0, 80)
             Color.ZIndex = 10
-            Color.Image = "rbxassetid://17764869956"
+            Color.Image = "rbxassetid://4155801252"
 
             ColorCorner.CornerRadius = UDim.new(0, 3)
             ColorCorner.Name = "ColorCorner"
