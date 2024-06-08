@@ -114,7 +114,7 @@ function lib:Window(text, preset, closebind)
     ImageButton.BackgroundTransparency = 0.500
     ImageButton.Position = UDim2.new(0.0235790554, 0, 0.466334164, 0)
     ImageButton.Size = UDim2.new(0, 50, 0, 50)
-    ImageButton.Image = "rbxassetid://17764869956"
+    ImageButton.Image = "rbxassetid://17763299053"
     ImageButton.Draggable = true
     UICorner.CornerRadius = UDim.new(0, 200)
     UICorner.Parent = ImageButton
