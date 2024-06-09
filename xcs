@@ -1603,43 +1603,43 @@ function lib:Window(text, preset, closebind)
             BindText.Parent = Bind
             BindText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             BindText.BackgroundTransparency = 1.000
-BindText.Position=UDim2.new(0.0358126722，0，0，0)
-BindText.Size=UDim2.new(0，337，0，42)
-BindText.Font=枚举.Font.Gotham
-BindText.Text=Key
-BindText.TextColor3=Color3.fromRGB(255，255，255)
-BindText.TextSize=14.000
-BindText.TextXAlignment=枚举.TextXAlignment.Right
+            BindText.Position = UDim2.new(0.0358126722, 0, 0, 0)
+            BindText.Size = UDim2.new(0, 337, 0, 42)
+            BindText.Font = Enum.Font.Gotham
+            BindText.Text = Key
+            BindText.TextColor3 = Color3.fromRGB(255, 255, 255)
+            BindText.TextSize = 14.000
+            BindText.TextXAlignment = Enum.TextXAlignment.Right
 
-Tab.CanvasSize=UDim2.new(0，0，0，TabLayout.AbbsoluteContentSize.Y)
+            Tab.CanvasSize = UDim2.new(0, 0, 0, TabLayout.AbsoluteContentSize.Y)
 
-Bind.MouseButton1单击：连接(
-功能()
-BindText.Text="..."
-binding=true
-本地输入等待=游戏：GetService("UserInputService")。InputBegan:wait()
-如果inputwait.KeyCode.Name~="未知"，则
-BindText.Text=inputwait.KeyCode.Name
-key=inputwait.KeyCode.Name
-绑定=false
-其他
-绑定=false
-结束
-结束
-)
+            Bind.MouseButton1Click:Connect(
+                function()
+                    BindText.Text = "..."
+                    binding = true
+                    local inputwait = game:GetService("UserInputService").InputBegan:wait()
+                    if inputwait.KeyCode.Name ~= "Unknown" then
+                        BindText.Text = inputwait.KeyCode.Name
+                        Key = inputwait.KeyCode.Name
+                        binding = false
+                    else
+                        binding = false
+                    end
+                end
+            )
 
-游戏：GetService("UserInputService")。InputBegan:connect(
-功能(当前，按下)
-如果未按下，则
-如果当前.keycode.Name==密钥和绑定==false，则
-pcall(回拨)
-结束
-结束
-结束
-)
-结束
-返回tabcontent
-结束
-return tabold
-结束
-返回库
+            game:GetService("UserInputService").InputBegan:connect(
+                function(current, pressed)
+                    if not pressed then
+                        if current.KeyCode.Name == Key and binding == false then
+                            pcall(callback)
+                        end
+                    end
+                end
+            )
+        end
+        return tabcontent
+    end
+    return tabhold
+end
+return lib
